@@ -1,0 +1,37 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from KeysManagerService WSDL service -->
+
+  <service name="KeysManager" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://helper"/>
+      <parameter name="wsdlServiceElement" value="KeysManagerService"/>
+      <parameter name="schemaQualified" value="http://helper"/>
+      <parameter name="wsdlServicePort" value="KeysManager"/>
+      <parameter name="className" value="helper.KeysManagerSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="KeysManager"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getPrivatekey" qname="operNS:getPrivatekey" xmlns:operNS="http://helper" returnQName="retNS:getPrivatekeyReturn" xmlns:retNS="http://helper" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:customerId" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updatePrivateKey" qname="operNS:updatePrivateKey" xmlns:operNS="http://helper" returnQName="retNS:updatePrivateKeyReturn" xmlns:retNS="http://helper" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:customerId" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:privateKey" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="insertNewKey" qname="operNS:insertNewKey" xmlns:operNS="http://helper" returnQName="retNS:insertNewKeyReturn" xmlns:retNS="http://helper" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:customerId" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:privateKey" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="insertNewKey getPrivatekey updatePrivateKey"/>
+
+  </service>
+</deployment>

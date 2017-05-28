@@ -9,7 +9,7 @@
 <undeployment
     xmlns="http://xml.apache.org/axis/wsdd/">
 
-  <!-- Services from CustomerService WSDL service -->
+  <!-- Services from KeysManagerService WSDL service -->
 
-  <service name="Customer"/>
+  <service name="KeysManager"/>
 </undeployment>

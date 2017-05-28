@@ -9,9 +9,8 @@ import connection.ConnectionKeyDb;
 import interfaces.KeyManagerInt;
 
 public class KeysManager implements KeyManagerInt {
-	private String username, password;
 	
-
+	@Override
 	public String getPrivatekey (String customerId) {
 		String result = "";
 		ResultSet resultSet;
@@ -37,7 +36,7 @@ public class KeysManager implements KeyManagerInt {
 		}
 		return result;
 	}
-
+	@Override
 	public boolean insertNewKey(String customerId, String privateKey)  {
 		ResultSet resultSet = null;
 		PreparedStatement preparedStatement;
@@ -60,7 +59,7 @@ public class KeysManager implements KeyManagerInt {
 	    		return true;
 	}
 	
-
+    @Override    
 	public boolean updatePrivateKey(String customerId, String privateKey) throws SQLException{
 		
 

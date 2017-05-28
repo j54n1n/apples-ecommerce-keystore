@@ -8,7 +8,7 @@ public class ConnectionKeyDb {
 	Statement st = null;
 	ResultSet rs = null;
 
-	public static final String url = "jdbc:postgresql://54.186.125.96/key_db";
+	public static final String url = "jdbc:postgresql://localhost/key_db";
 
 	public static final String user = "postgres";
 	public static final String pw = "postgres";

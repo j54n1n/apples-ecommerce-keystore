@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://helper" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://helper" xmlns:intf="http://helper" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://helper" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getPrivatekey">
+    <complexType>
+     <sequence>
+      <element name="customerId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPrivatekeyResponse">
+    <complexType>
+     <sequence>
+      <element name="getPrivatekeyReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updatePrivateKey">
+    <complexType>
+     <sequence>
+      <element name="customerId" type="xsd:string"/>
+      <element name="privateKey" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updatePrivateKeyResponse">
+    <complexType>
+     <sequence>
+      <element name="updatePrivateKeyReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertNewKey">
+    <complexType>
+     <sequence>
+      <element name="customerId" type="xsd:string"/>
+      <element name="privateKey" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertNewKeyResponse">
+    <complexType>
+     <sequence>
+      <element name="insertNewKeyReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getPrivatekeyRequest">
+
+      <wsdl:part element="impl:getPrivatekey" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrivatekeyResponse">
+
+      <wsdl:part element="impl:getPrivatekeyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updatePrivateKeyRequest">
+
+      <wsdl:part element="impl:updatePrivateKey" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updatePrivateKeyResponse">
+
+      <wsdl:part element="impl:updatePrivateKeyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertNewKeyRequest">
+
+      <wsdl:part element="impl:insertNewKey" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertNewKeyResponse">
+
+      <wsdl:part element="impl:insertNewKeyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="KeysManager">
+
+      <wsdl:operation name="getPrivatekey">
+
+         <wsdl:input message="impl:getPrivatekeyRequest" name="getPrivatekeyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPrivatekeyResponse" name="getPrivatekeyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updatePrivateKey">
+
+         <wsdl:input message="impl:updatePrivateKeyRequest" name="updatePrivateKeyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updatePrivateKeyResponse" name="updatePrivateKeyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertNewKey">
+
+         <wsdl:input message="impl:insertNewKeyRequest" name="insertNewKeyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertNewKeyResponse" name="insertNewKeyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="KeysManagerSoapBinding" type="impl:KeysManager">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getPrivatekey">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPrivatekeyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPrivatekeyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updatePrivateKey">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updatePrivateKeyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updatePrivateKeyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insertNewKey">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertNewKeyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertNewKeyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="KeysManagerService">
+
+      <wsdl:port binding="impl:KeysManagerSoapBinding" name="KeysManager">
+
+         <wsdlsoap:address location="http://localhost:8080/apples-ecommerce-ws/services/KeysManager"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
