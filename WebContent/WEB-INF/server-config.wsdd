@@ -3,7 +3,7 @@
   <ns1:parameter name="sendMultiRefs" value="true"/>
   <ns1:parameter name="disablePrettyXML" value="true"/>
   <ns1:parameter name="adminPassword" value="admin"/>
-  <ns1:parameter name="attachments.Directory" value="/Users/prova/eclipse/wildfly-10.1.0.Final/standalone/deployments/apples-ecommerceEAR.ear/apples-ecommerce-ws.war/WEB-INF/attachments"/>
+  <ns1:parameter name="attachments.Directory" value="/Users/prova/eclipse/wildfly-10.1.0.Final/standalone/deployments/apples-ecommerceEAR1.ear/apples-ecommerce-ws.war/WEB-INF/attachments"/>
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
@@ -26,11 +26,11 @@
   <ns2:operation name="getPrivatekey" qname="ns1:getPrivatekey" returnQName="ns1:getPrivatekeyReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://helper" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
    <ns2:parameter qname="ns1:customerId" type="xsd:string"/>
   </ns2:operation>
-  <ns1:operation name="updatePrivateKey" qname="ns2:updatePrivateKey" returnQName="ns2:updatePrivateKeyReturn" returnType="xsd:boolean" soapAction="" xmlns:ns2="http://helper" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="insertNewKey" qname="ns2:insertNewKey" returnQName="ns2:insertNewKeyReturn" returnType="xsd:boolean" soapAction="" xmlns:ns2="http://helper" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns2:customerId" type="xsd:string"/>
    <ns1:parameter qname="ns2:privateKey" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="insertNewKey" qname="ns3:insertNewKey" returnQName="ns3:insertNewKeyReturn" returnType="xsd:boolean" soapAction="" xmlns:ns3="http://helper" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="updatePrivateKey" qname="ns3:updatePrivateKey" returnQName="ns3:updatePrivateKeyReturn" returnType="xsd:boolean" soapAction="" xmlns:ns3="http://helper" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns3:customerId" type="xsd:string"/>
    <ns1:parameter qname="ns3:privateKey" type="xsd:string"/>
   </ns1:operation>

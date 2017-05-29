@@ -23,11 +23,11 @@
       <operation name="getPrivatekey" qname="operNS:getPrivatekey" xmlns:operNS="http://helper" returnQName="retNS:getPrivatekeyReturn" xmlns:retNS="http://helper" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:customerId" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="updatePrivateKey" qname="operNS:updatePrivateKey" xmlns:operNS="http://helper" returnQName="retNS:updatePrivateKeyReturn" xmlns:retNS="http://helper" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      <operation name="insertNewKey" qname="operNS:insertNewKey" xmlns:operNS="http://helper" returnQName="retNS:insertNewKeyReturn" xmlns:retNS="http://helper" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:customerId" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:privateKey" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="insertNewKey" qname="operNS:insertNewKey" xmlns:operNS="http://helper" returnQName="retNS:insertNewKeyReturn" xmlns:retNS="http://helper" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      <operation name="updatePrivateKey" qname="operNS:updatePrivateKey" xmlns:operNS="http://helper" returnQName="retNS:updatePrivateKeyReturn" xmlns:retNS="http://helper" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:customerId" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:privateKey" xmlns:pns="http://helper" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>

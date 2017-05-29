@@ -38,7 +38,6 @@ public class KeysManager implements KeyManagerInt {
 	}
 	@Override
 	public boolean insertNewKey(String customerId, String privateKey)  {
-		ResultSet resultSet = null;
 		PreparedStatement preparedStatement;
 		Connection connection = ConnectionKeyDb.connect();
 	    try {
@@ -48,7 +47,7 @@ public class KeysManager implements KeyManagerInt {
 								"VALUES (?, ?) " );
 				preparedStatement.setString(1, customerId);
 				preparedStatement.setString(2, privateKey);
-				resultSet = preparedStatement.executeQuery();
+			    preparedStatement.executeUpdate();
 				preparedStatement.close();
 				connection.setAutoCommit(true);
 			} catch (SQLException e) {
