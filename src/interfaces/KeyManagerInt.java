@@ -14,5 +14,8 @@ public interface KeyManagerInt {
 	public boolean insertNewKey(String customerId, String privateKey);
 	
 	@WebMethod
+	public boolean insertCCNewKey(String customerId, String privateKey);
+	
+	@WebMethod
 	public boolean updatePrivateKey(String customerId, String privateKey) throws SQLException;
 }

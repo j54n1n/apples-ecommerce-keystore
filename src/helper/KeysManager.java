@@ -98,5 +98,26 @@ public class KeysManager implements KeyManagerInt {
 		}
 		return  true;
 	}
+	@Override
+	public boolean insertCCNewKey(String customerId, String privateKey) {
+		PreparedStatement preparedStatement;
+		Connection connection = ConnectionKeyDb.connect();
+	    try {
+				connection.setAutoCommit(false);
+				preparedStatement = connection.prepareStatement(
+						"INSERT INTO cckeys (customer_id, customer_private_key) "+
+								"VALUES (?, ?) " );
+				preparedStatement.setString(1, customerId);
+				preparedStatement.setString(2, privateKey);
+			    preparedStatement.executeUpdate();
+				preparedStatement.close();
+				connection.setAutoCommit(true);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
+	    		return true; 
+	}
 
 }
